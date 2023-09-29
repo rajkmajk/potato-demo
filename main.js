@@ -50,8 +50,14 @@ function addStar() {
   
   Array(200).fill().forEach(addStar);
 
-  const spaceTexture = new THREE.TextureLoader().load('space.png');
-  scene.background = spaceTexture;
+// bkg
+const spaceTexture = new THREE.TextureLoader().load('space.png');
+scene.background = spaceTexture;
+
+// avatar
+const potatoTexture = new THREE.TextureLoader().load('potato.png');
+const potato = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: potatoTexture }));
+scene.add(potato);
 
 function animate() {
     requestAnimationFrame(animate);
